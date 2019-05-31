@@ -19,6 +19,10 @@ if (!isset($_SESSION['id_pedido'])) {
     $dataPedido->execute($AddprodutosNaLista);
     $listarData = $dataPedido->fetch();
 
+    $valorTotal = $pdo->prepare("SELECT SUM(valor) as valorTotal from tb_pedido_produtos where tb_pedido_produtos.id_pedido = :id_pedido");
+    $valorTotal->execute($AddprodutosNaLista);
+    $listarTotal = $valorTotal->fetch();
+
     $AddDadosClienteNaLista = array('id_cliente' => $_SESSION['id_cliente']);
     $rs = $pdo->prepare("SELECT * FROM tb_clientes where id_cliente = :id_cliente");
     $rs->execute($AddDadosClienteNaLista);
@@ -168,6 +172,7 @@ if (!isset($_SESSION['id_pedido'])) {
     $html .='
         </tbody> 
     </table>
+    <h2>Total: R$ ' . $listarTotal[0] . ',00</h2>
 ';
 
     require_once ('dompdf/autoload.inc.php');
