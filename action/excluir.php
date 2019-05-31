@@ -16,7 +16,7 @@ if (isset($_POST['realizarExclusaoNoBanco'])) {
 } elseif (isset($_POST['excluirProduto'])) {
     $exclui_produto = array('id' => $_POST['excluirProduto']);
 
-    $exclusao = $pdo->prepare("DELETE FROM tb_pedido_produtos WHERE id_produto =:id");
+    $exclusao = $pdo->prepare("DELETE FROM tb_produtos WHERE id_produto =:id");
     $exclusao->execute($exclui_produto);
 
     if ($exclusao->rowCount() > 0) {

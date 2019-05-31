@@ -1,5 +1,5 @@
 <?php
-include './validaSessao.php';
+include 'banco/conectaBanco.php';
 
 $rs = $pdo->prepare("SELECT * FROM tb_produtos WHERE descricao LIKE '%or%'");
 $rs->execute();
