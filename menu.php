@@ -1,21 +1,16 @@
 <?php include './validaSessao.php'; ?>
 
+
 <div class = "row">
     <nav class = "navbar">
 
-        <form name="crono" menu = "action" method = "POST">
+        <form name="crono" action="index.php" method = "POST">
             <div class = " navbar-brand ">
-                <!--## Código antigo ##   
-                <button name = "CLIENTES"><a href = "index.php"></a>CLIENTES</button>
-                <button name = "PRODUTOS"><a href = "index.php"></a>PRODUTOS</button>
-                <button name = "PEDIDOS"><a href = "index.php">PEDIDOS</a></button>
-                <button name = "SAIR"><a href = "index.php">SAIR</a></button> -->
-
                 <input type = "submit" class = "btn btn-primary" name = "CLIENTES" value = "CLIENTES">
                 <input type = "submit" class = "btn btn-primary" name = "PRODUTOS" value = "PRODUTOS">
                 <input type = "submit" class = "btn btn-primary" name = "PEDIDOS" value = "PEDIDOS">
                 <input type = "submit" class = "btn btn-primary" name = "SAIR" value = "SAIR">
-                <input type="button" class="btn btn-primary" size="7" name="face" title="Cronómetro">
+                <input type = "button" class = "btn btn-primary" name = "face" title="Cronómetro" >
             <script language="JavaScript">
                 <!-- 
                 var timeCrono;

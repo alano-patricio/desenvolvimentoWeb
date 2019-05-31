@@ -1,5 +1,3 @@
-<?php ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +10,7 @@
         <div class="box">
             <h2>Área de Login</h2>
             <?php echo ((@$error) ? "Usuário ou senha não coincidem" : "") ?>
-            <form action="index.php" method="POST">
+            <form action="validalogin.php" method="POST">
                 <div class="inputBox">
                     <input type="text" name="user" required="">
                     <label>Nome</label>
